@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\Carchase\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e18f98bca66c910ac2344578dcdfd5c3cef56791">
+        <dex dex="E:\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_555200eaa5074ba98381b2af12ad2252be4898bd\classes.dex" />
+    </item>
+
+</items>
