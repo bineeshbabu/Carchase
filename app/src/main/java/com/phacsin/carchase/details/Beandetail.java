@@ -14,8 +14,6 @@ public class Beandetail {
         this.title = title;
         this.description = description;
         this.ratings =ratings;
-
-
     }
 
     public String getTitle() {

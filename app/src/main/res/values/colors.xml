@@ -13,4 +13,7 @@
     <color name="ratingbar">#ff9800</color>
     <color name="colortitletext">#3c4350</color>
     <color name="colorheadtext">#696d6f</color>
+    <color name="blue">#1a237e</color>
+    <color name="red">#dd2c00</color>
+    <color name="white">#ffffff</color>
 </resources>

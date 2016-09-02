@@ -14,6 +14,7 @@ public class DetailActivity extends AppCompatActivity {
 
     ExpandableHeightListView listView;
 ImageView back;
+
     private int[] Image = {R.drawable.p1,R.drawable.p2, R.drawable.p3};
 
     private String[] Title ={"Mandi","Lissa","Clark"};
@@ -28,7 +29,9 @@ ImageView back;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.details);
 
-    back = (ImageView)findViewById(R.id.back);
+
+
+        back = (ImageView)findViewById(R.id.back);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
