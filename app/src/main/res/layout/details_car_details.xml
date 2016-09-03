@@ -168,6 +168,7 @@
                             <Button
                                 android:layout_width="70sp"
                                 android:layout_height="30sp"
+                                android:id="@+id/emi_button"
                                 android:layout_toRightOf="@+id/emi_text"
                                 android:background="@drawable/emi"
                                 android:layout_marginLeft="10sp"

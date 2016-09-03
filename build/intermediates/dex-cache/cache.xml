@@ -1,3 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="E:\Carchase\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="E:\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.3.0_bc6bc47e7cbe31534cc63c07df480527a1a0ea06\classes.dex" />
+    </item>
+    <item
+        jar="E:\sdk\extras\android\m2repository\com\android\support\support-annotations\23.3.0\support-annotations-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="E:\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.3.0_185e00ed5a1d25ca86b6783161b35e225af01140\classes.dex" />
+    </item>
+    <item
+        jar="E:\Carchase\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="E:\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.3.0_53f5f4019c2109ea71e0cb37e5f7f6f519bd75a3\classes.dex" />
+    </item>
+    <item
+        jar="E:\Carchase\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3b1007e414fa5982bd9cbf3bcb066e58790457ed">
+        <dex dex="E:\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_555200eaa5074ba98381b2af12ad2252be4898bd\classes.dex" />
+    </item>
+    <item
+        jar="E:\Carchase\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="E:\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.3.0_80aba2ed9b7c4f25c4933ee53d3622219cc74aa3\classes.dex" />
+    </item>
+    <item
+        jar="E:\Carchase\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="84a737dc6930b4f80c37992ac760e8e66c1ae54d">
+        <dex dex="E:\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_069d494f0e4d3942b6f68bd80602605d88f9f4b5\classes.dex" />
+    </item>
+    <item
+        jar="E:\Carchase\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="E:\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.3.0_1a1e9106a2c2d30c4cd8b3b3633b4e47c0b7c7b9\classes.dex" />
+    </item>
+    <item
+        jar="E:\Carchase\app\build\intermediates\exploded-aar\me.drakeet.materialdialog\library\1.3.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="6e57fe155cea810fb2ba5fe9ffabcb197ecf81d1">
+        <dex dex="E:\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\me.drakeet.materialdialog-library-1.3.1_443562c2f1001e147f2d80f496afcf96cf65a056\classes.dex" />
+    </item>
+    <item
+        jar="E:\Carchase\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="E:\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.3.0_32faeb48539eae93abc4576b93c31bbf58a6d19c\classes.dex" />
+    </item>
+
+</items>
