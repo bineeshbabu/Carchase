@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Carchase</string>
     <string name="showroom_price_button">Check On-Road Price</string>
+    <string-array name="sort_array">
+        <item name="Price - Highest"/>
+        <item name="Price - Lowest"/>
+        <item name="Distance - Nearest"/>
+    </string-array>
 </resources>

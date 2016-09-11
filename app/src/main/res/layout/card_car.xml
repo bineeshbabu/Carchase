@@ -34,7 +34,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black_de"
+            android:textColor="@color/Black"
             android:id="@+id/name"
             android:text="BMW M3 GTR"
             android:textStyle="italic|bold"
@@ -46,7 +46,7 @@
             android:id="@+id/price"
             android:layout_marginTop="3dp"
             android:text="$29000"
-            android:textColor="@color/black_de"/>
+            android:textColor="@color/Black"/>
         </LinearLayout>
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/compare_btn_add"

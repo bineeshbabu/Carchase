@@ -7,12 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.phacsin.carchase.MainActivity;
 import com.phacsin.carchase.R;
 
 import java.util.ArrayList;
 
-import me.drakeet.materialdialog.MaterialDialog;
 
 public class DetailActivity extends AppCompatActivity {
     ExpandableHeightListView listView;
@@ -51,10 +51,9 @@ public class DetailActivity extends AppCompatActivity {
         btn_on_road_price.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final MaterialDialog mMaterialDialog = new MaterialDialog(DetailActivity.this);
-                mMaterialDialog.setContentView(R.layout.details_on_road_price);
-                mMaterialDialog.setCanceledOnTouchOutside(true);
-                mMaterialDialog.show();
+                new MaterialDialog.Builder(DetailActivity.this)
+                        .customView(R.layout.details_on_road_price, false)
+                        .show();
             }
         });
 
@@ -63,10 +62,9 @@ public class DetailActivity extends AppCompatActivity {
         emi_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final MaterialDialog mMaterialDialog = new MaterialDialog(DetailActivity.this);
-                mMaterialDialog.setContentView(R.layout.details_on_road_price);
-                mMaterialDialog.setCanceledOnTouchOutside(true);
-                mMaterialDialog.show();
+                new MaterialDialog.Builder(DetailActivity.this)
+                        .customView(R.layout.details_on_road_price, false)
+                        .show();
             }
         });
 
