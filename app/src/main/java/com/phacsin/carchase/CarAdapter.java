@@ -1,5 +1,7 @@
 package com.phacsin.carchase;
 
+import android.animation.Animator;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -8,11 +10,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.phacsin.carchase.details.DetailActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,26 +26,77 @@ import java.util.List;
 public class CarAdapter extends RecyclerView.Adapter<CarAdapter.MyViewHolder> {
 
     private List<CarDetails> carList;
-    Context context;
+    Activity activity;
+    TextView compare_text;
+    RelativeLayout compare_layout;
+    List<Integer> CompareList = new ArrayList<>();
+
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name,price;
-
+        Button compare_add;
         public MyViewHolder(View view) {
             super(view);
             name = (TextView) view.findViewById(R.id.name);
+            compare_add = (Button) view.findViewById(R.id.compare_btn_add);
+
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    v.getContext().startActivity(new Intent(context, DetailActivity.class));
+                    activity.startActivity(new Intent(activity, DetailActivity.class));
                 }
             });
+
+            compare_add.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(!compare_add.isSelected())
+                    {
+                        compare_add.setSelected(true);
+                        if(CompareList.isEmpty())
+                        {
+                            compare_layout.setVisibility(View.VISIBLE);
+                            compare_text.setText("1 car added");
+                            CompareList.add(getLayoutPosition());
+                        }
+                        else if(CompareList.size()==1)
+                        {
+                            compare_text.setText("2 cars added");
+                            CompareList.add(getLayoutPosition());
+                        }
+                        else
+                            compare_add.setSelected(false);
+                    }
+                    else
+                    {
+                        compare_add.setSelected(false);
+                        if(CompareList.size()==2)
+                        {
+                            compare_text.setText("1 car added");
+                            for(int i=0;i<CompareList.size();i++)
+                                if(CompareList.get(i)==getLayoutPosition())
+                                    CompareList.remove(i);
+                        }
+                        else if(CompareList.size()==1)
+                        {
+                            for(int i=0;i<CompareList.size();i++)
+                                if(CompareList.get(i)==getLayoutPosition())
+                                    CompareList.remove(i);
+                            compare_layout.setVisibility(View.GONE);
+                        }
+                    }
+
+                }
+            });
+
         }
     }
 
 
-    public CarAdapter(List<CarDetails> carList,Context context) {
+    public CarAdapter(List<CarDetails> carList,Activity activity) {
         this.carList = carList;
-        this.context = context;
+        this.activity = activity;
+        compare_layout = (RelativeLayout) activity.findViewById(R.id.compare_rellayout);
+        compare_text = (TextView) activity.findViewById(R.id.compare_text);
     }
 
     @Override

@@ -18,9 +18,103 @@
             app:layout_scrollFlags="snap|scroll|enterAlways"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
     </android.support.design.widget.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/WhiteSmoke"
+        android:orientation="horizontal"
+        app:layout_scrollFlags="snap|scroll|enterAlways"
+        >
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/sort_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Sort"
+            android:textColor="@color/DarkBlue"
+            android:background="@color/WhiteSmoke"
+            android:textAllCaps="false"
+            android:paddingLeft="60dp"
+            android:paddingRight="60dp"
+            android:drawableLeft="@drawable/ic_action_sort"
+            android:layout_weight="0.5"
+            />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/Black"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/filter_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Filter"
+            android:textAllCaps="false"
+            android:background="@color/WhiteSmoke"
+            android:textColor="@color/DarkBlue"
+            android:paddingLeft="60dp"
+            android:paddingRight="60dp"
+            android:drawableLeft="@drawable/ic_action_filter"
+            android:layout_weight="0.5"
+            />
+    </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/Black"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/VeryLightGray"
+        android:id="@+id/compare_rellayout"
+        android:visibility="gone"
+        >
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:gravity="center"
+         android:text="1 car added"
+         android:textSize="18sp"
+         android:textColor="@color/Black"
+         android:id="@+id/compare_text"
+         android:layout_centerVertical="true"
+         android:layout_marginLeft="20dp"
+         />
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/compare_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="Compare"
+            android:textAllCaps="false"
+            android:layout_toLeftOf="@+id/remove_all_btn"
+            android:textColor="@color/Black"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@color/NavajoWhite"
+            />
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/remove_all_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="Remove All"
+            android:textAllCaps="false"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10sp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/Black"
+            android:background="@color/NavajoWhite"
+            />
+    </RelativeLayout>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/carList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        android:layout_height="match_parent"/>
+    </LinearLayout>
+
 </android.support.design.widget.CoordinatorLayout>
