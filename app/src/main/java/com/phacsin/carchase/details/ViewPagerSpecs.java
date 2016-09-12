@@ -8,6 +8,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.phacsin.carchase.R;
@@ -23,7 +25,8 @@ public class ViewPagerSpecs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.car_specs);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.menuToolbar);
+        toolbar.setTitle("Specifications");
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         setSupportActionBar(toolbar);
         final Drawable upArrow = getResources().getDrawable(R.drawable.arrows);

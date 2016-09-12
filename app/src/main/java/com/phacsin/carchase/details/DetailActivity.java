@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.phacsin.carchase.MainActivity;
 import com.phacsin.carchase.R;
+import com.phacsin.carchase.tab.VersionDetails;
 
 import java.util.ArrayList;
 
@@ -33,11 +34,12 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.details_car_details);
         btn_on_road_price =(Button) findViewById(R.id.checkonroad_price);
         emi_bt =(Button) findViewById(R.id.emi_button);
-        version_bt =(Button) findViewById(R.id.version_view_button);
+        version_bt =(Button) findViewById(R.id.version_view_button_details);
         spec_details = (Button)findViewById(R.id.speci_detail_button);
 
 
         back = (ImageView)findViewById(R.id.back);
+
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,8 +55,8 @@ public class DetailActivity extends AppCompatActivity {
                 startActivity(it);
             }
         });
-        // checking on road price using selected places
 
+        // checking on road price using selected places
 
         btn_on_road_price.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +73,7 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 new MaterialDialog.Builder(DetailActivity.this)
-                        .customView(R.layout.details_on_road_price, false)
+                        .customView(R.layout.details_emi_prices, false)
                         .show();
             }
         });
@@ -83,6 +85,8 @@ public class DetailActivity extends AppCompatActivity {
         version_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent it = new Intent(DetailActivity.this,VersionDetails.class);
+                startActivity(it);
             }
         });
 

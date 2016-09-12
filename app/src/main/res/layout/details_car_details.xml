@@ -279,9 +279,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                 <android.support.v7.widget.AppCompatButton
-                    android:id="@+id/version_view_button"
+                    android:id="@+id/version_view_button_details"
                     android:layout_width="wrap_content"
-                    android:layout_height="20sp"
+                    android:layout_height="30sp"
                     android:layout_marginTop="5dp"
                     android:textColor="@color/white"
                     android:layout_centerInParent="true"
