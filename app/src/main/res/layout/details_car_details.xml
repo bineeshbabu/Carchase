@@ -50,7 +50,6 @@
                 android:background="#fff"
                 android:padding="10dp"
                 android:orientation="vertical"
-
                 >
 
             <customfonts.MyTextView
@@ -151,32 +150,7 @@
                     android:text="@string/showroom_price_button"
                     android:clickable="true"/>
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10sp">
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                        <customfonts.MyTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/emi_text"
-                            android:text="EMI Available"
-                            android:layout_marginTop="10dp"
-                            android:textSize="18dp"/>
-                            <Button
-                                android:layout_width="70sp"
-                                android:layout_height="30sp"
-                                android:id="@+id/emi_button"
-                                android:layout_toRightOf="@+id/emi_text"
-                                android:background="@drawable/emi"
-                                android:layout_marginLeft="10sp"
-                                android:text="EMI"
-                                android:textColor="@color/white"
-                                android:layout_centerInParent="true"/>
-                        </RelativeLayout>
-                    </LinearLayout>
+
                 <customfonts.MyTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -247,52 +221,67 @@
                             android:background="@drawable/button_details_seven"/>
                     </RelativeLayout>
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15sp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <customfonts.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/emi_text"
+                            android:text="EMI Available :"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18dp"/>
+                        <customfonts.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/emi_text"
+                            android:id="@+id/emi_text_availability"
+                            android:text="Yes"
+                            android:layout_marginLeft="10sp"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18dp"/>
+                        <android.support.v7.widget.AppCompatButton
+                            android:layout_width="70sp"
+                            android:layout_height="30sp"
+                            android:id="@+id/emi_button"
+                            android:background="@drawable/emi"
+                            android:layout_marginRight="20sp"
+                            android:layout_alignParentRight="true"
+                            android:text="EMI"
+                            android:textColor="@color/white"/>
+                    </RelativeLayout>
+                </LinearLayout>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1sp"
                     android:layout_marginBottom="8dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="15dp"
                     android:background="@color/blue"/>
-                <customfonts.MyTextView
+                <android.support.v7.widget.AppCompatButton
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30sp"
+                    android:id="@+id/speci_detail_button"
+                    android:background="@drawable/button_spec"
+                    android:layout_gravity="center"
                     android:text="Specifications"
-                    android:layout_marginTop="10dp"
-                    android:textSize="18dp"/>
+                    android:textColor="@color/white"/>
             </LinearLayout>
-
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scrollbars="none"
-                    >
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <include layout="@layout/details_detail_length"></include>
-                        <include layout="@layout/details_detail_width"></include>
-                        <include layout="@layout/details_detail_height"></include>
-                        <include layout="@layout/details_detail_seat"></include>
-                        <include layout="@layout/details_detail_displac"></include>
-                        <include layout="@layout/details_detail_fuel"></include>
-                        <include layout="@layout/details_detail_max_pwr"></include>
-                        <include layout="@layout/details_detail_max_trq"></include>
-                    </LinearLayout>
-                </HorizontalScrollView>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/version_view_button"
                     android:layout_width="wrap_content"
-                    android:layout_height="30sp"
+                    android:layout_height="20sp"
                     android:layout_marginTop="5dp"
                     android:textColor="@color/white"
                     android:layout_centerInParent="true"
@@ -307,7 +296,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="5dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">

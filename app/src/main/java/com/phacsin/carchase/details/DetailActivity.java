@@ -17,14 +17,14 @@ import java.util.ArrayList;
 public class DetailActivity extends AppCompatActivity {
     ExpandableHeightListView listView;
     ImageView back;
-    private Button btn_on_road_price,emi_bt,version_bt;
+    private Button btn_on_road_price,emi_bt,version_bt,spec_details;
     private int[] Image = {R.drawable.p1,R.drawable.p2, R.drawable.p3};
 
     private String[] Title ={"Mandi","Lissa","Clark"};
 
-    private String[] description = {"Nice food it was awesome","Nice food it was awesome ","Nice food it was awesome "};
+    private String[] description = {"Nice car","Beutifull "," awesome "};
 
-    private String[] Ratings ={"5","3","4"};
+    private String[] Ratings ={"5","3.2","4.5"};
     private ArrayList<Beandetail> beans;
     private ListViewBaseAdapterDetail listViewBaseAdapterDetail;
     @Override
@@ -34,6 +34,7 @@ public class DetailActivity extends AppCompatActivity {
         btn_on_road_price =(Button) findViewById(R.id.checkonroad_price);
         emi_bt =(Button) findViewById(R.id.emi_button);
         version_bt =(Button) findViewById(R.id.version_view_button);
+        spec_details = (Button)findViewById(R.id.speci_detail_button);
 
 
         back = (ImageView)findViewById(R.id.back);
@@ -42,6 +43,13 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(DetailActivity.this,MainActivity.class);
+                startActivity(it);
+            }
+        });
+        spec_details.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(DetailActivity.this,ViewPagerSpecs.class);
                 startActivity(it);
             }
         });
