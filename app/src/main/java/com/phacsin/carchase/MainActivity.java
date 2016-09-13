@@ -1,5 +1,6 @@
 package com.phacsin.carchase;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     CarAdapter adapter;
     Button removeAll;
     RelativeLayout compareLayout;
-    private Button sort_btn;
+    private Button sort_btn,filter_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.carList);
         removeAll = (Button) findViewById(R.id.remove_all_btn);
         sort_btn = (Button) findViewById(R.id.sort_btn);
+        filter_btn = (Button) findViewById(R.id.filter_btn);
         compareLayout = (RelativeLayout) findViewById(R.id.compare_rellayout);
         toolbar.setTitle("New Cars");
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -58,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
                         .positiveColor(getResources().getColor(R.color.Blue))
                         .positiveText("Choose")
                         .show();
+            }
+        });
+        filter_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),FilterActivity.class));
             }
         });
         removeAll.setOnClickListener(new View.OnClickListener() {
