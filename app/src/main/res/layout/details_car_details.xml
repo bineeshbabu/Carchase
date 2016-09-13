@@ -265,7 +265,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="30sp"
                     android:id="@+id/speci_detail_button"
-                    android:background="@drawable/button_spec"
                     android:layout_gravity="center"
                     android:text="Specifications"
                     android:textColor="@color/white"/>

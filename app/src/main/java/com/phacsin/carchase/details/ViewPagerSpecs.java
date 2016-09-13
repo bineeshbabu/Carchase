@@ -25,7 +25,7 @@ public class ViewPagerSpecs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.car_specs);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.menuToolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Specifications");
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         setSupportActionBar(toolbar);

@@ -58,7 +58,7 @@
             android:textColor="@color/DarkBlue"
             android:paddingLeft="60dp"
             android:paddingRight="60dp"
-            android:drawableLeft="@drawable/filter"
+            android:drawableLeft="@drawable/ic_action_filter"
             android:layout_weight="0.5"
             />
     </LinearLayout>

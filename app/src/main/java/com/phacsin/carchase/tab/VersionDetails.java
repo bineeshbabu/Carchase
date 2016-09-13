@@ -19,7 +19,7 @@ public class VersionDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.version_main_activity);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.menuToolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Related Versions");
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         setSupportActionBar(toolbar);
