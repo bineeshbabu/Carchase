@@ -6,6 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +20,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.phacsin.carchase.details.DetailActivity;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,15 +40,30 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.MyViewHolder> {
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name,price;
         Button compare_add;
+        ImageView imageView;
         public MyViewHolder(View view) {
             super(view);
             name = (TextView) view.findViewById(R.id.name);
+            price = (TextView) view.findViewById(R.id.price);
+            imageView = (ImageView) view.findViewById(R.id.car_image);
             compare_add = (Button) view.findViewById(R.id.compare_btn_add);
 
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    activity.startActivity(new Intent(activity, DetailActivity.class));
+                    Intent intent = new Intent(activity, DetailActivity.class);
+                    imageView.buildDrawingCache();
+                    Bitmap image= imageView.getDrawingCache();
+                    Bundle extras = new Bundle();
+                    extras.putParcelable("imagebitmap", image);
+                    extras.putString("name",name.getText().toString());
+                    intent.putExtras(extras);
+                    if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP) {
+                        ActivityOptionsCompat options = ActivityOptionsCompat.
+                                makeSceneTransitionAnimation(activity, (View) imageView, "car_image");
+                        activity.startActivity(intent, options.toBundle());
+                    }
+                    activity.startActivity(intent);
                 }
             });
 
@@ -111,18 +131,17 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         CarDetails carDetails = carList.get(position);
-        holder.name.setText(carDetails.name);
-        /*String URL = partnerList.get(position);
+        holder.name.setText(carDetails.make + " " + carDetails.name);
+        holder.price.setText("₹ " + carDetails.price + " Lakhs");
+        String URL = carList.get(position).image;
         Target target = new Target() {
             @Override
             public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
                 holder.imageView.setImageBitmap(bitmap);
-                holder.indicatorView.setVisibility(View.GONE);
             }
 
             @Override
             public void onBitmapFailed(Drawable errorDrawable) {
-                holder.indicatorView.setVisibility(View.GONE);
 
             }
 
@@ -130,7 +149,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.MyViewHolder> {
             public void onPrepareLoad(Drawable placeHolderDrawable) {
             }
         };
-        Picasso.with(context).load(URL).resize(1280,720).onlyScaleDown().into(target);*/
+        Picasso.with(activity).load(URL).resize(1280,720).onlyScaleDown().into(target);
     }
 
     @Override

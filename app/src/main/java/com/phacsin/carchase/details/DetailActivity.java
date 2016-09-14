@@ -1,7 +1,9 @@
 package com.phacsin.carchase.details;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +30,9 @@ public class DetailActivity extends AppCompatActivity {
     private String[] Ratings ={"5","3.2","4.5"};
     private ArrayList<Beandetail> beans;
     private ListViewBaseAdapterDetail listViewBaseAdapterDetail;
+    private ImageView image;
+    private CollapsingToolbarLayout collapsingToolbarLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +41,14 @@ public class DetailActivity extends AppCompatActivity {
         emi_bt =(Button) findViewById(R.id.emi_button);
         version_bt =(Button) findViewById(R.id.version_view_button_details);
         spec_details = (Button)findViewById(R.id.speci_detail_button);
-
+        image =(ImageView) findViewById(R.id.car_image);
+        Bundle extras = getIntent().getExtras();
+        /*collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        collapsingToolbarLayout.setTitle(extras.getString("name"));
+        collapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(android.R.color.transparent));
+        collapsingToolbarLayout.setContentScrimColor(getResources().getColor(R.color.DarkBlue));*/
+        Bitmap bmp = (Bitmap) extras.getParcelable("imagebitmap");
+        image.setImageBitmap(bmp);
 
         back = (ImageView)findViewById(R.id.back);
 

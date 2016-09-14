@@ -19,7 +19,7 @@
            android:layout_width="100dp"
            android:layout_height="100dp"
            android:layout_margin="10dp"
-            android:src="@drawable/car"
+            android:transitionName="car_image"
             android:id="@+id/car_image"
         />
         <RelativeLayout
