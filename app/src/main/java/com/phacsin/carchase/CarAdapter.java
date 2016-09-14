@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -57,13 +58,19 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.MyViewHolder> {
                     Bundle extras = new Bundle();
                     extras.putParcelable("imagebitmap", image);
                     extras.putString("name",name.getText().toString());
+                    extras.putString("price",price.getText().toString());
+                    extras.putString("id",carList.get(getLayoutPosition()).id);
                     intent.putExtras(extras);
                     if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP) {
+                        Pair<View, String> p1 = Pair.create((View)imageView, "car_image");
+                        Pair<View, String> p2 = Pair.create((View)name, "name");
+                        Pair<View, String> p3 = Pair.create((View)price, "price");
                         ActivityOptionsCompat options = ActivityOptionsCompat.
-                                makeSceneTransitionAnimation(activity, (View) imageView, "car_image");
+                                makeSceneTransitionAnimation(activity, p1,p2,p3);
                         activity.startActivity(intent, options.toBundle());
                     }
-                    activity.startActivity(intent);
+                    else
+                        activity.startActivity(intent);
                 }
             });
 

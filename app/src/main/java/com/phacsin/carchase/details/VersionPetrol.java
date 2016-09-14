@@ -22,7 +22,6 @@ public class VersionPetrol extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.version_details, container, false);
 
-
         return view;
 
     }

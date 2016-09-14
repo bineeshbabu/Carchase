@@ -2,24 +2,42 @@ package com.phacsin.carchase.details;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 
+import com.android.volley.NoConnectionError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.TimeoutError;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.phacsin.carchase.R;
+import com.phacsin.carchase.fragments.PerformanceFragment;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Created by Bineesh P Babu on 12-09-2016.
  */
 public class ViewPagerSpecs extends AppCompatActivity {
-    ViewPagerSpecFragement comfort,safety,capacity,performance,others;
-    Bundle args[] = new Bundle[5];
+    PerformanceFragment performance;
+    Bundle args;
+    private ViewPager viewPager;
+    private MyPagerAdapter adapter;
+    private SmartTabLayout viewPagerTab;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,44 +51,60 @@ public class ViewPagerSpecs extends AppCompatActivity {
         //upArrow.setColorFilter(getResources().getColor(R.color.grey), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(upArrow);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        for(int i=0;i<5;i++)
-            args[i] = new Bundle(i);
-        args[0].putString("category","talks");
-        performance = new ViewPagerSpecFragement();
-        performance.setArguments(args[0]);
 
-        args[1].putString("category","workshop");
-        comfort = new ViewPagerSpecFragement();
-        comfort.setArguments(args[1]);
-
-        args[2].putString("category","panel");
-        safety = new ViewPagerSpecFragement();
-        safety.setArguments(args[2]);
-
-        args[3].putString("category","competition");
-        capacity = new ViewPagerSpecFragement();
-        capacity.setArguments(args[3]);
-
-        args[4].putString("category","competition");
-        others = new ViewPagerSpecFragement();
-        others.setArguments(args[4]);
-
-
-        MyPagerAdapter adapter = new MyPagerAdapter(getSupportFragmentManager());
-
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-        viewPager.setAdapter(adapter);
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setOffscreenPageLimit(3);
-        SmartTabLayout viewPagerTab = (SmartTabLayout) findViewById(R.id.viewpagertab);
-        viewPagerTab.setViewPager(viewPager);
+        viewPagerTab = (SmartTabLayout) findViewById(R.id.viewpagertab);
+        getDetails();
+    }
+
+    private void getDetails() {
+        String URL = "http://phacsin.com/cars/getspecs.php?id="+getIntent().getStringExtra("id");
+        Log.d("url",URL);
+        JsonObjectRequest strReq = new JsonObjectRequest(Request.Method.GET,
+                URL,null, new Response.Listener<JSONObject>() {
+
+            @Override
+            public void onResponse(JSONObject response) {
+                    adapter = new MyPagerAdapter(getSupportFragmentManager(),response);
+                    viewPager.setAdapter(adapter);
+                    viewPagerTab.setViewPager(viewPager);
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d("vError", "Error: " + error.toString());
+                String errorMsg;
+                if(error instanceof NoConnectionError)
+                    errorMsg = "Network Error";
+                else if(error instanceof TimeoutError)
+                    errorMsg = "Timeout Error";
+                else
+                    errorMsg = "Unknown Error";
+                Snackbar.make(findViewById(android.R.id.content), errorMsg, Snackbar.LENGTH_LONG)
+                        .setAction("RETRY", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                getDetails();
+                            }
+                        }).show();
+            }
+
+        });
+
+// Adding request to request queue
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(strReq);
     }
 
 
     public  class MyPagerAdapter extends FragmentPagerAdapter {
         private int NUM_ITEMS = 5;
-
-        public MyPagerAdapter(FragmentManager fragmentManager) {
+        JSONObject response;
+        public MyPagerAdapter(FragmentManager fragmentManager,JSONObject response) {
             super(fragmentManager);
+            this.response=response;
         }
 
         // Returns total number of pages
@@ -84,15 +118,35 @@ public class ViewPagerSpecs extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
+                    args = new Bundle();
+                    args.putString("json",response.toString());
+                    performance = new PerformanceFragment();
+                    performance.setArguments(args);
                     return performance;
                 case 1:
-                    return comfort;
+                    args = new Bundle();
+                    args.putString("json",response.toString());
+                    performance = new PerformanceFragment();
+                    performance.setArguments(args);
+                    return performance;
                 case 2:
-                    return safety;
+                    args = new Bundle();
+                    args.putString("json",response.toString());
+                    performance = new PerformanceFragment();
+                    performance.setArguments(args);
+                    return performance;
                 case 3:
-                    return capacity;
+                    args = new Bundle();
+                    args.putString("json",response.toString());
+                    performance = new PerformanceFragment();
+                    performance.setArguments(args);
+                    return performance;
                 case 4:
-                    return others;
+                    args = new Bundle();
+                    args.putString("json",response.toString());
+                    performance = new PerformanceFragment();
+                    performance.setArguments(args);
+                    return performance;
                 default:
                     return null;
             }

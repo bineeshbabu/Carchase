@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.phacsin.carchase.MainActivity;
@@ -32,6 +33,7 @@ public class DetailActivity extends AppCompatActivity {
     private ListViewBaseAdapterDetail listViewBaseAdapterDetail;
     private ImageView image;
     private CollapsingToolbarLayout collapsingToolbarLayout;
+    private TextView car_name,price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,11 @@ public class DetailActivity extends AppCompatActivity {
         collapsingToolbarLayout.setTitle(extras.getString("name"));
         collapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(android.R.color.transparent));
         collapsingToolbarLayout.setContentScrimColor(getResources().getColor(R.color.DarkBlue));*/
+        car_name =(TextView) findViewById(R.id.name);
+        price =(TextView) findViewById(R.id.price);
+        car_name.setText(getIntent().getStringExtra("name"));
+        price.setText(getIntent().getStringExtra("price"));
+
         Bitmap bmp = (Bitmap) extras.getParcelable("imagebitmap");
         image.setImageBitmap(bmp);
 
@@ -64,6 +71,7 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(DetailActivity.this,ViewPagerSpecs.class);
+                it.putExtra("id",getIntent().getStringExtra("id"));
                 startActivity(it);
             }
         });

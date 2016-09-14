@@ -53,14 +53,15 @@
                 >
 
             <customfonts.MyTextView
+                android:id="@+id/name"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="BMW 3 Series"
                 android:maxLines="2"
                 android:textSize="24dp"
                 android:textColor="@color/colortitletext"
                 android:layout_gravity="center"
+                android:transitionName="name"
                 android:layout_marginTop="5dp"/>
 
 
@@ -85,25 +86,20 @@
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
-                    <ImageView
-                        android:id="@+id/rupees_detials"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/rupees"/>
                     <customfonts.MyTextView
-                        android:id="@+id/description"
-                        android:layout_toRightOf="@+id/rupees_detials"
+                        android:id="@+id/price"
                         android:layout_width="wrap_content"
                         android:layout_marginLeft="10sp"
                         android:layout_height="wrap_content"
                         android:textSize="22dp"
                         android:letterSpacing="0.04"
+                        android:transitionName="price"
                         android:lineSpacingExtra="0.5dp"
                         android:textColor="@color/colorheadtext"
                         android:text="37.87 L"/>
                         <customfonts.MyTextView
                             android:id="@+id/avgexprice"
-                            android:layout_toRightOf="@+id/description"
+                            android:layout_toRightOf="@+id/price"
                             android:layout_width="wrap_content"
                             android:layout_marginLeft="10sp"
                             android:layout_centerInParent="true"
@@ -263,7 +259,7 @@
                     android:background="@color/blue"/>
                 <android.support.v7.widget.AppCompatButton
                     android:layout_width="match_parent"
-                    android:layout_height="30sp"
+                    android:layout_height="wrap_content"
                     android:id="@+id/speci_detail_button"
                     android:layout_gravity="center"
                     android:text="Specifications"
