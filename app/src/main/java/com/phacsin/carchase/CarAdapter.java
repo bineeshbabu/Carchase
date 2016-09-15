@@ -32,6 +32,7 @@ import java.util.List;
  */
 public class CarAdapter extends RecyclerView.Adapter<CarAdapter.MyViewHolder> {
 
+    private final Button compare_btn;
     private List<CarDetails> carList;
     Activity activity;
     TextView compare_text;
@@ -88,17 +89,20 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.MyViewHolder> {
                         }
                         else if(CompareList.size()==1)
                         {
+                            compare_btn.setVisibility(View.VISIBLE);
                             compare_text.setText("2 cars added");
                             CompareList.add(getLayoutPosition());
                         }
                         else
                             compare_add.setSelected(false);
+                        Log.d("list",CompareList.toString());
                     }
                     else
                     {
                         compare_add.setSelected(false);
                         if(CompareList.size()==2)
                         {
+                            compare_btn.setVisibility(View.GONE);
                             compare_text.setText("1 car added");
                             for(int i=0;i<CompareList.size();i++)
                                 if(CompareList.get(i)==getLayoutPosition())
@@ -111,6 +115,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.MyViewHolder> {
                                     CompareList.remove(i);
                             compare_layout.setVisibility(View.GONE);
                         }
+                        Log.d("list",CompareList.toString());
                     }
 
                 }
@@ -120,11 +125,27 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.MyViewHolder> {
     }
 
 
-    public CarAdapter(List<CarDetails> carList,Activity activity) {
+    public CarAdapter(final List<CarDetails> carList, final Activity activity) {
         this.carList = carList;
         this.activity = activity;
         compare_layout = (RelativeLayout) activity.findViewById(R.id.compare_rellayout);
         compare_text = (TextView) activity.findViewById(R.id.compare_text);
+        compare_btn = (Button) activity.findViewById(R.id.compare_btn);
+        compare_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CarDetails car1 = carList.get(CompareList.get(0));
+                CarDetails car2 = carList.get(CompareList.get(1));
+                Intent intent = new Intent(activity,CompareActivity.class);
+                intent.putExtra("car_1_name",car1.make + " " + car1.name);
+                intent.putExtra("car_2_name",car2.make + " " + car2.name);
+                intent.putExtra("car_1_id",car1.id);
+                intent.putExtra("car_2_id",car2.id);
+                intent.putExtra("car_1_price","₹ " + car1.price + " Lakhs");
+                intent.putExtra("car_2_price","₹ " + car2.price + " Lakhs");
+                activity.startActivity(intent);
+            }
+        });
     }
 
     @Override

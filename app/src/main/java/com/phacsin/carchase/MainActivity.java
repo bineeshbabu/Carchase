@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         removeAll = (Button) findViewById(R.id.remove_all_btn);
         sort_btn = (Button) findViewById(R.id.sort_btn);
         filter_btn = (Button) findViewById(R.id.filter_btn);
+
         compareLayout = (RelativeLayout) findViewById(R.id.compare_rellayout);
         toolbar.setTitle("New Cars");
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -106,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 adapter.notifyItemRangeInserted(0,carList.size());
             }
         });
+
 
     }
 

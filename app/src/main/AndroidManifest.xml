@@ -22,6 +22,8 @@
         <activity android:name=".details.ViewPagerSpecs"/>
         <activity android:name=".tab.VersionDetails"/>
 
+        <activity android:name=".CompareActivity"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

@@ -96,6 +96,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
             android:background="@color/NavajoWhite"
+            android:visibility="gone"
             />
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/remove_all_btn"

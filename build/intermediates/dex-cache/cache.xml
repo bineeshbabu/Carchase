@@ -1,3 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\libs\internal_impl-24.1.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.1.1_7a311d80f8860ce06c576187f6d7580ca0e3b7f8\classes.dex" />
+    </item>
+    <item
+        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="11efbf5902ad1cd8bf6ae4ca9404469acc93f1c0">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_aa3c18d7e69d4b29b71143c0c8fb433ce1ecffae\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\GD\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\24.1.1\3af19f153122737b372622fa6c81dd11a1c6b999\support-annotations-24.1.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.1.1_9ada483f90a0c6f5d34b51b8333c023d666352ac\classes.dex" />
+    </item>
+    <item
+        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-23.4.0_6bce36e1e58f7fd13d8e39dca2a2d596536b5dfa\classes.dex" />
+    </item>
+    <item
+        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\me.zhanghai.android.materialprogressbar\library\1.1.7\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1478a113f04bf0b679037b4f6bd88bd1837b96a3">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\me.zhanghai.android.materialprogressbar-library-1.1.7_05b66e3f915de51edaae629a54db3b48094f265c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\com.afollestad.material-dialogs\core\0.9.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="acc33023966f868dfe3ecb77a3ce5676dc8de92d">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.afollestad.material-dialogs-core-0.9.0.1_dd0227ed4997c2fdb99ae0f2b3f7068790cc2560\classes.dex" />
+    </item>
+    <item
+        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\com.ogaclejapan.smarttablayout\library\1.6.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1d16ffcc50b1dfa726cf978ea9f0a949cdd70e7d">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.ogaclejapan.smarttablayout-library-1.6.1_2d0dcbe2be1b3ab92e8f03a29d53a17cb1e6673d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.4.0_7ef996f9ab1ef89c19b0010d624d7f5e3324bc12\classes.dex" />
+    </item>
+    <item
+        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\com.android.volley\volley\1.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.volley-volley-1.0.0_ef58ae0678b2a968c916e82e26d598d8a7354600\classes.dex" />
+    </item>
+    <item
+        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\com.ogaclejapan.smarttablayout\utils-v4\1.6.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="7dc4e0ea5b06183f6b32f08c5db6bcb6ef79c02a">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.ogaclejapan.smarttablayout-utils-v4-1.6.1_9d202f4164fe8482537f9f55ce18baccd6c5aa20\classes.dex" />
+    </item>
+    <item
+        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.1.1_3af3bfa47627582e490de0301b2997b8fda5bb3f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="348157521a775c29e22964f7df578a14da53f7d8">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_299e33124e737c5f262d232cff00c5ff2ae5bf75\classes.dex" />
+    </item>
+    <item
+        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="787871951412550519b0222aba3c9df4cea49875">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.1.1_8ed21d3347d979e47e650e88a3988004a0602452\classes.dex" />
+    </item>
+    <item
+        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f62e763609f65e47dc6c498760a4accf02776788">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.1.1_f1c3f77265e17adbe74b96579d50aceaa992243f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1256c10604bb098490eab070d76754ac5ceab35c">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.1.1_8c72ecce016e5f4c045f11ed23bfc5ecce55b586\classes.dex" />
+    </item>
+    <item
+        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.1.1_35fa03fdf11adb20d2ded4d82c43213480e12250\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\GD\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_6322941eba716b3618d2c42f340438788e54d2e6\classes.dex" />
+    </item>
+
+</items>
