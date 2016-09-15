@@ -12,7 +12,7 @@
         jar="C:\Android Studio Projects\Carchase\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="8a662d45034155d5893e89db2030c071795ec56c">
+        sha1="b2aeb0e7aad1480de6831b9db31d2b4b7488f4aa">
         <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_aa3c18d7e69d4b29b71143c0c8fb433ce1ecffae\classes.dex" />
     </item>
     <item
@@ -37,11 +37,11 @@
         <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\me.zhanghai.android.materialprogressbar-library-1.1.7_05b66e3f915de51edaae629a54db3b48094f265c\classes.dex" />
     </item>
     <item
-        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\com.afollestad.material-dialogs\core\0.9.0.1\jars\classes.jar"
+        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="acc33023966f868dfe3ecb77a3ce5676dc8de92d">
-        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.afollestad.material-dialogs-core-0.9.0.1_dd0227ed4997c2fdb99ae0f2b3f7068790cc2560\classes.dex" />
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.4.0_7ef996f9ab1ef89c19b0010d624d7f5e3324bc12\classes.dex" />
     </item>
     <item
         jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\com.ogaclejapan.smarttablayout\library\1.6.1\jars\classes.jar"
@@ -51,11 +51,11 @@
         <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.ogaclejapan.smarttablayout-library-1.6.1_2d0dcbe2be1b3ab92e8f03a29d53a17cb1e6673d\classes.dex" />
     </item>
     <item
-        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
+        jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\com.afollestad.material-dialogs\core\0.9.0.1\jars\classes.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
-        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.4.0_7ef996f9ab1ef89c19b0010d624d7f5e3324bc12\classes.dex" />
+        sha1="acc33023966f868dfe3ecb77a3ce5676dc8de92d">
+        <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.afollestad.material-dialogs-core-0.9.0.1_dd0227ed4997c2fdb99ae0f2b3f7068790cc2560\classes.dex" />
     </item>
     <item
         jar="C:\Android Studio Projects\Carchase\app\build\intermediates\exploded-aar\com.android.volley\volley\1.0.0\jars\classes.jar"
@@ -82,7 +82,7 @@
         jar="C:\Android Studio Projects\Carchase\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="4fdd58db46cc164f49f17c9a3f9b629756b5bbdd">
+        sha1="b263b680cb5356082428abc2fff0dc7f459f52ce">
         <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_299e33124e737c5f262d232cff00c5ff2ae5bf75\classes.dex" />
     </item>
     <item
