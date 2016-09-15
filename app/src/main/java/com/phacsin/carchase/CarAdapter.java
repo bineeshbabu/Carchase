@@ -59,8 +59,9 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.MyViewHolder> {
                     Bundle extras = new Bundle();
                     extras.putParcelable("imagebitmap", image);
                     extras.putString("name",name.getText().toString());
-                    extras.putString("price",price.getText().toString());
+                    extras.putString("price",carList.get(getLayoutPosition()).price);
                     extras.putString("id",carList.get(getLayoutPosition()).id);
+                    extras.putString("fuel",carList.get(getLayoutPosition()).fuel_type);
                     intent.putExtras(extras);
                     if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP) {
                         Pair<View, String> p1 = Pair.create((View)imageView, "car_image");
@@ -144,6 +145,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.MyViewHolder> {
                 intent.putExtra("car_1_price","₹ " + car1.price + " Lakhs");
                 intent.putExtra("car_2_price","₹ " + car2.price + " Lakhs");
                 activity.startActivity(intent);
+                activity.finish();
             }
         });
     }

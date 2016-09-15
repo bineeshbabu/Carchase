@@ -26,7 +26,7 @@ import org.json.JSONObject;
  */
 public class CompareActivity extends AppCompatActivity {
 
-    TextView car_1,car_2,price_1,price_2,displacement_1,displacement_2,torque_1,torque_2,power_1,power_2,mileage_1,mileage_2;
+    TextView car_1,car_2,price_1,price_2,displacement_1,displacement_2,torque_1,torque_2,power_1,power_2;
     TextView drivetrain_1,drivetrain_2,capacity_1,capacity_2,speed_1,speed_2,transmission_1,transmission_2;
     String id1,id2;
     @Override
@@ -43,8 +43,6 @@ public class CompareActivity extends AppCompatActivity {
         torque_2  = (TextView) findViewById(R.id.torque_2);
         power_1  = (TextView) findViewById(R.id.power_1);
         power_2  = (TextView) findViewById(R.id.power_2);
-        mileage_1  = (TextView) findViewById(R.id.mileage_1);
-        mileage_2  = (TextView) findViewById(R.id.mileage_2);
         drivetrain_1  = (TextView) findViewById(R.id.drivetrain_1);
         drivetrain_2  = (TextView) findViewById(R.id.drivetrain_2);
         capacity_1  = (TextView) findViewById(R.id.capacity_1);

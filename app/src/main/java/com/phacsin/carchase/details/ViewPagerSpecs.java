@@ -100,7 +100,7 @@ public class ViewPagerSpecs extends AppCompatActivity {
 
 
     public  class MyPagerAdapter extends FragmentPagerAdapter {
-        private int NUM_ITEMS = 5;
+        private int NUM_ITEMS = 1;
         JSONObject response;
         public MyPagerAdapter(FragmentManager fragmentManager,JSONObject response) {
             super(fragmentManager);
@@ -123,7 +123,7 @@ public class ViewPagerSpecs extends AppCompatActivity {
                     performance = new PerformanceFragment();
                     performance.setArguments(args);
                     return performance;
-                case 1:
+               /* case 1:
                     args = new Bundle();
                     args.putString("json",response.toString());
                     performance = new PerformanceFragment();
@@ -146,7 +146,7 @@ public class ViewPagerSpecs extends AppCompatActivity {
                     args.putString("json",response.toString());
                     performance = new PerformanceFragment();
                     performance.setArguments(args);
-                    return performance;
+                    return performance;*/
                 default:
                     return null;
             }
@@ -156,15 +156,15 @@ public class ViewPagerSpecs extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Perfromance";
-                case 1:
+                    return "Performance";
+                /*case 1:
                     return "Comfort";
                 case 2:
                     return "Safety";
                 case 3:
                     return "Capacity";
                 case 4:
-                    return "Others";
+                    return "Others";*/
                 default:
                     return null;
             }

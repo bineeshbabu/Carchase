@@ -12,7 +12,7 @@
         jar="C:\Android Studio Projects\Carchase\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="11efbf5902ad1cd8bf6ae4ca9404469acc93f1c0">
+        sha1="8a662d45034155d5893e89db2030c071795ec56c">
         <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_aa3c18d7e69d4b29b71143c0c8fb433ce1ecffae\classes.dex" />
     </item>
     <item
@@ -82,7 +82,7 @@
         jar="C:\Android Studio Projects\Carchase\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="348157521a775c29e22964f7df578a14da53f7d8">
+        sha1="4fdd58db46cc164f49f17c9a3f9b629756b5bbdd">
         <dex dex="C:\Android Studio Projects\Carchase\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_299e33124e737c5f262d232cff00c5ff2ae5bf75\classes.dex" />
     </item>
     <item

@@ -24,6 +24,13 @@
 
         <activity android:name=".CompareActivity"
             android:parentActivityName=".MainActivity"/>
+
+        <activity android:name=".FilterPriceResultActivity"
+            android:parentActivityName=".FilterActivity"/>
+        <activity android:name=".FilterFuelResultActivity"
+            android:parentActivityName=".FilterActivity"/>
+        <activity android:name=".FilterStyleResultActivity"
+            android:parentActivityName=".FilterActivity"/>
     </application>
 
 </manifest>

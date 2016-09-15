@@ -124,6 +124,7 @@
                     </RelativeLayout>
                 </LinearLayout>
                 <customfonts.MyTextView
+                    android:id="@+id/fuel_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Petrol"
@@ -156,71 +157,17 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <android.support.v7.widget.AppCompatButton
-                            android:id="@+id/button_color_one"
-                            android:layout_width="30sp"
-                            android:layout_height="30sp"
-                            android:layout_marginTop="15dp"
-                            android:background="@drawable/button_details_one"/>
-
-                    <android.support.v7.widget.AppCompatButton
-                        android:id="@+id/button_color_two"
-                        android:layout_toRightOf="@+id/button_color_one"
-                        android:layout_width="30sp"
-                        android:layout_height="30sp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginLeft="5sp"
-                        android:background="@drawable/button_details_two"/>
-                        <android.support.v7.widget.AppCompatButton
-                            android:id="@+id/button_color_three"
-                            android:layout_toRightOf="@+id/button_color_two"
-                            android:layout_width="30sp"
-                            android:layout_height="30sp"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginLeft="5sp"
-                            android:background="@drawable/button_details_three"/>
-                        <android.support.v7.widget.AppCompatButton
-                            android:id="@+id/button_color_four"
-                            android:layout_toRightOf="@+id/button_color_three"
-                            android:layout_width="30sp"
-                            android:layout_height="30sp"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginLeft="5sp"
-                            android:background="@drawable/button_details_four"/>
-                        <android.support.v7.widget.AppCompatButton
-                            android:id="@+id/button_color_five"
-                            android:layout_toRightOf="@+id/button_color_four"
-                            android:layout_width="30sp"
-                            android:layout_height="30sp"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginLeft="5sp"
-                            android:background="@drawable/button_details_five"/>
-                        <android.support.v7.widget.AppCompatButton
-                            android:id="@+id/button_color_six"
-                            android:layout_toRightOf="@+id/button_color_five"
-                            android:layout_width="30sp"
-                            android:layout_height="30sp"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginLeft="5sp"
-                            android:background="@drawable/button_details_six"/>
-                        <android.support.v7.widget.AppCompatButton
-                            android:id="@+id/button_color_seven"
-                            android:layout_toRightOf="@+id/button_color_six"
-                            android:layout_width="30sp"
-                            android:layout_height="30sp"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginLeft="5sp"
-                            android:background="@drawable/button_details_seven"/>
-                    </RelativeLayout>
+                   <android.support.v7.widget.RecyclerView
+                       android:id="@+id/color_view"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="7dp">
+                   </android.support.v7.widget.RecyclerView>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15sp">
+                    android:layout_marginTop="8dp">
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
@@ -265,94 +212,6 @@
                     android:text="Specifications"
                     android:textColor="@color/white"/>
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5sp">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                <android.support.v7.widget.AppCompatButton
-                    android:id="@+id/version_view_button_details"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30sp"
-                    android:layout_marginTop="5dp"
-                    android:textColor="@color/white"
-                    android:layout_centerInParent="true"
-                    android:paddingLeft="2sp"
-                    android:paddingRight="2sp"
-                    android:typeface="serif"
-                    android:background="@drawable/version_detail_button"
-                    android:text="More Related Versions"/>
-                </RelativeLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginTop="5dp">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <customfonts.MyTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Reviews"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="10dp"
-                        android:textSize="18dp"/>
-                </RelativeLayout>
-            </LinearLayout>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/colorwhite">
-
-    <com.phacsin.carchase.details.ExpandableHeightListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/listview">
-
-    </com.phacsin.carchase.details.ExpandableHeightListView>
-
-</LinearLayout>
-
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@color/colorwhite"
-                android:padding="10dp"
-                android:layout_marginTop="5dp">
-                <customfonts.MyEditText
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColor="@color/colortitletext"
-                    android:background="@drawable/rectgray"
-                    android:padding="10dp"
-                    android:textSize="10dp"
-                    android:textColorHint="@color/colortitletext"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_gravity="center" />
-                <customfonts.MyTextView
-                    android:layout_weight="2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Review"
-                    android:background="@drawable/rectbackgroundblue"
-                    android:padding="11dp"
-                    android:textColor="@color/colorgreen"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:textSize="13dp"
-                    android:textStyle="bold"
-                    />
-        </LinearLayout>
-
 
     </LinearLayout>
 

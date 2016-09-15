@@ -26,9 +26,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(TABLE_ACTIVE_FILTER);
         db.execSQL(TABLE_INACTIVE_FILTER);
         db.execSQL("INSERT INTO inactive_filter(filter_name) VALUES('Price')");
-        db.execSQL("INSERT INTO inactive_filter(filter_name) VALUES('Year')");
         db.execSQL("INSERT INTO inactive_filter(filter_name) VALUES('Style')");
-        db.execSQL("INSERT INTO inactive_filter(filter_name) VALUES('Colour')");
         db.execSQL("INSERT INTO inactive_filter(filter_name) VALUES('Fuel')");
     }
     public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {

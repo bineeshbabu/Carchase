@@ -43,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
     Button removeAll;
     RelativeLayout compareLayout;
     private Button sort_btn,filter_btn;
+    DBHandler dbHandler;
+    boolean price_filter_set = false,style_filter_set = false,fuel_filter_set = false;
+    List<FilterDetails> filters;
+    private String style_filter,fuel_filter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +59,23 @@ public class MainActivity extends AppCompatActivity {
         filter_btn = (Button) findViewById(R.id.filter_btn);
 
         compareLayout = (RelativeLayout) findViewById(R.id.compare_rellayout);
+        dbHandler = new DBHandler(getApplicationContext());
         toolbar.setTitle("New Cars");
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
-        createList();
+        filters = dbHandler.getAllActiveFilters();
+        if(filters.isEmpty())
+            createList();
+        else
+        {
+            for(FilterDetails filter : filters)
+                if(filter.name.equals("Price")) {
+                    filterbyPrice(filter.value);
+                    price_filter_set=true;
+                }
+            if(!price_filter_set)
+                createList();
+        }
         adapter = new CarAdapter(carList,this);
         recyclerView.setAdapter(adapter);
         sort_btn.setOnClickListener(new View.OnClickListener() {
@@ -111,7 +128,99 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void filterbyPrice(String value) {
+        for(FilterDetails details:filters)
+            if(details.name.equals("Style")) {
+                style_filter = details.value;
+                style_filter_set=true;
+            }
+            else if(details.name.equals("Fuel")) {
+                fuel_filter = details.value;
+                fuel_filter_set=true;
+            }
+        String URL = "http://phacsin.com/cars/car_price.php?";
+        if(value.equals("1 Lakh to 5 Lakhs"))
+            URL+="min=1&max=5";
+        else if(value.equals("5 Lakhs to 10 Lakhs"))
+            URL+="min=5&max=10";
+        else if(value.equals("10 Lakhs to 20 Lakhs"))
+            URL+="min=10&max=20";
+        else if(value.equals("20 Lakhs to 50 Lakhs"))
+            URL+="min=20&max=50";
+        JsonArrayRequest strReq = new JsonArrayRequest(Request.Method.GET,
+                URL,null, new Response.Listener<JSONArray>() {
+
+            @Override
+            public void onResponse(JSONArray response) {
+                try {
+                    Log.d("response", response.toString());
+                    for (int i = 0; i < response.length(); i++) {
+                        JSONObject json = response.getJSONObject(i);
+                        CarDetails carDetails = new CarDetails();
+                        carDetails.name = json.getString("name");
+                        carDetails.make = json.getString("make");
+                        carDetails.price = json.getString("price");
+                        carDetails.id = json.getString("id");
+                        carDetails.fuel_type = json.getString("fuel");
+                        carDetails.style = json.getString("style");
+                        carDetails.image = "http://phacsin.com/cars/car_images/" + json.getString("image_url");
+                        if(!fuel_filter_set && !style_filter_set) {
+                            carList.add(carDetails);
+                        }
+                        else
+                        {
+                            if(fuel_filter_set && fuel_filter.equals(carDetails.fuel_type) && !style_filter_set)
+                                carList.add(carDetails);
+                            else if(style_filter_set && style_filter.equals(carDetails.style) && !fuel_filter_set)
+                                carList.add(carDetails);
+                            else if(fuel_filter_set && style_filter_set && style_filter.equals(carDetails.style) && fuel_filter.equals(carDetails.fuel_type))
+                                carList.add(carDetails);
+                        }
+                    }
+                    adapter.notifyItemRangeInserted(0,response.length());
+                }catch (JSONException e)
+                {
+                    Log.d("json_error", response.toString());
+                }
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d("vError", "Error: " + error.getMessage());
+                String errorMsg;
+                if(error instanceof NoConnectionError)
+                    errorMsg = "Network Error";
+                else if(error instanceof TimeoutError)
+                    errorMsg = "Timeout Error";
+                else
+                    errorMsg = "Unknown Error";
+                Snackbar.make(findViewById(android.R.id.content), errorMsg, Snackbar.LENGTH_LONG)
+                        .setAction("RETRY", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                createList();
+                            }
+                        }).show();
+            }
+
+        });
+
+// Adding request to request queue
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(strReq);
+    }
+
     private void createList() {
+        for(FilterDetails details:filters)
+            if(details.name.equals("Style")) {
+                style_filter = details.value;
+                style_filter_set=true;
+            }
+            else if(details.name.equals("Fuel")) {
+                fuel_filter = details.value;
+                fuel_filter_set=true;
+            }
         String URL = "http://phacsin.com/cars/cars_all.php";
         JsonArrayRequest strReq = new JsonArrayRequest(Request.Method.GET,
                 URL,null, new Response.Listener<JSONArray>() {
@@ -127,8 +236,21 @@ public class MainActivity extends AppCompatActivity {
                         carDetails.make=json.getString("make");
                         carDetails.price=json.getString("price");
                         carDetails.id=json.getString("id");
+                        carDetails.fuel_type = json.getString("fuel");
+                        carDetails.style = json.getString("style");
                         carDetails.image = "http://phacsin.com/cars/car_images/" + json.getString("image_url");
-                        carList.add(carDetails);
+                        if(!fuel_filter_set && !style_filter_set) {
+                            carList.add(carDetails);
+                        }
+                        else
+                        {
+                            if(fuel_filter_set && fuel_filter.equals(carDetails.fuel_type) && !style_filter_set)
+                                carList.add(carDetails);
+                            else if(style_filter_set && style_filter.equals(carDetails.style) && !fuel_filter_set)
+                                carList.add(carDetails);
+                            else if(fuel_filter_set && style_filter_set && style_filter.equals(carDetails.style) && fuel_filter.equals(carDetails.fuel_type))
+                                carList.add(carDetails);
+                        }
                     }
                     adapter.notifyItemRangeInserted(0,response.length());
                 }catch (JSONException e)

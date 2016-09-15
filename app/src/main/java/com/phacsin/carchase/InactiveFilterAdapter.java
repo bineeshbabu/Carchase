@@ -29,8 +29,21 @@ public class InactiveFilterAdapter extends RecyclerView.Adapter<InactiveFilterAd
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(view.getContext(),FilterResultActivity.class);
-                    //intent.putExtra("")
+                    if(filter_name.getText().toString().equals("Price")) {
+                        Intent intent = new Intent(view.getContext(), FilterPriceResultActivity.class);
+                        view.getContext().startActivity(intent);
+                    }
+                    else if(filter_name.getText().toString().equals("Style"))
+                    {
+                        Intent intent = new Intent(view.getContext(), FilterStyleResultActivity.class);
+                        view.getContext().startActivity(intent);
+                    }
+                    else if(filter_name.getText().toString().equals("Fuel"))
+                    {
+                        Intent intent = new Intent(view.getContext(), FilterFuelResultActivity.class);
+                        view.getContext().startActivity(intent);
+                    }
+
                 }
             });
         }
